@@ -1,0 +1,5 @@
+<!--<h3>Hi I am the componenet server</h3>-->
+<!--String interpolation-->
+<!--I will use css classes dynamically with ngclass-->
+<p [ngStyle]="{backgroundColor: getColor()}" [ngClass]="{online: ServerStatus === 'online'}"
+> this {{'Server'}} with the {{ ServerId }} is {{ getServerStatus()}}</p>

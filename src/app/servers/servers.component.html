@@ -1,0 +1,35 @@
+
+<div class="container">
+    <div class="row">
+        <div class="xs-12-col">
+            <!--<h3>the componenet serves !</h3>-->
+                      <!--by adding an exclamation mark, we made sure that this is only disabled if this is false-->
+                   <label>Add Server</label><br>
+                   <!--<input type="text" class="from-control" (input)="onUpdateServerName($event)"><br>-->
+                   <input type="text" class="form-control" [(ngModel)]="serverName"><br>  <!--comprendre two way binding-->
+                     <!--<p>{{serverName}}</p>-->
+                    <button class="btn btn-primary" [disabled]="!allowNewServer" (click)="onCreateServer()">Add server</button>
+                      <!--<p [innerText]="allowNewServer"></p>-->
+                    <br><p>{{ServerCreationStatus}}</p><!--comprendre string interpolation-->
+                    <br>
+                      <label>Username</label>
+                     <input type="text" class="form-control" [(ngModel)]="userName">
+                   <p>Le nom de l'utlisateur est {{userName}}</p>
+                  <button class="btn btn-primary" [disabled]="userName===''" (click)="userName=''">Rest User </button>
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="xs-12-col">
+            <label>Create Server</label> <br><!--we will use directive-->
+            <input type="text" class="form-control" [(ngModel)]="serverName"> <br>
+            <button class="btn btn-primary" (click)="onCreateServer()"> Create Server</button>
+            <p *ngIf="ServerCreated;else noServer">THis server is created by ngIf ad his name is : {{serverName}}</p>
+            <ng-template #noServer>
+                <p>there is no server created</p>
+            </ng-template>
+        </div>
+    </div>
+</div>
+
+
